@@ -332,7 +332,7 @@ class DemoRunner:
                 self.publish_semantic_observation(observations, state_time)
 
             state = self._sim.last_state()
-            print("Publishing at time: " + str(state_time))
+            #print("Publishing at time: " + str(state_time))
             r.sleep()
 
         self._sim.close()

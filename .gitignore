@@ -1,0 +1,8 @@
+system/matterport/src/vehicle_simulator/log/
+system/matterport/src/vehicle_simulator/mesh/matterport
+system/matterport/src/far_planner/data
+system/matterport/build/
+system/matterport/devel/
+**/.vscode/**
+**/__pycache__/**
+.catkin_workspace
