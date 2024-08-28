@@ -147,13 +147,14 @@ class DemoRunner:
         color_img_right = obs["color_sensor_3"][:, :, :3]
         color_img_top = obs["color_sensor_4"][:, :, :3]
         color_img_bottom = obs["color_sensor_5"][:, :, :3]
-        image_dict_color = {}
-        image_dict_color["front"] = color_img_front
-        image_dict_color["back"] = color_img_back
-        image_dict_color["left"] = color_img_left
-        image_dict_color["right"] = color_img_right
-        image_dict_color["top"] = color_img_top
-        image_dict_color["bottom"] = color_img_bottom
+        image_dict_color = {
+            "front": color_img_front,
+            "back": color_img_back,
+            "left": color_img_left,
+            "right": color_img_right,
+            "top": color_img_top,
+            "bottom": color_img_bottom
+        }
 
         Fout_color, Fout_mask = sampler(image_dict_color, interpolation = 'linear', invalid_pixel_value = 127)
         image_360_color = Fout_color
@@ -169,13 +170,15 @@ class DemoRunner:
         semantic_img_right = obs["semantic_sensor_3"]
         semantic_img_top = obs["semantic_sensor_4"]
         semantic_img_bottom = obs["semantic_sensor_5"]
-        image_dict_semantic = {}
-        image_dict_semantic["front"] = semantic_img_front
-        image_dict_semantic["back"] = semantic_img_back
-        image_dict_semantic["left"] = semantic_img_left
-        image_dict_semantic["right"] = semantic_img_right
-        image_dict_semantic["top"] = semantic_img_top
-        image_dict_semantic["bottom"] = semantic_img_bottom
+        image_dict_semantic = {
+            "front": semantic_img_front,
+            "back": semantic_img_back,
+            "left": semantic_img_left,
+            "right": semantic_img_right,
+            "top": semantic_img_top,
+            "bottom": semantic_img_bottom
+        }
+
         for key in image_dict_semantic.keys():
             if self._sim_settings["class_semantic"]:
                 image_dict_semantic[key] = self.instance_id_to_label_id_func(image_dict_semantic[key])

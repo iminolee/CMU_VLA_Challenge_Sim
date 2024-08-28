@@ -4,12 +4,9 @@
  * fanyang2@andrew.cmu.edu,   
  */
 
-
-
 #include "graph_decoder/decoder_node.h"
 
 /***************************************************************************************/
-
 
 void GraphDecoder::Init() {
     /* initialize subscriber and publisher */
@@ -32,13 +29,22 @@ void GraphDecoder::GraphCallBack(const visibility_graph_msg::GraphConstPtr& msg)
     NavNodePtr temp_node_ptr = NULL;
     robot_id_ = msg->robot_id;
     std::unordered_map<std::size_t, std::size_t> nodeIdx_idx_map;
+
     for (std::size_t i=0; i<shared_graph.nodes.size(); i++) {
         const auto node = shared_graph.nodes[i];
         CreateNavNode(node, temp_node_ptr);
+
         if (AddNodePtrToGraph(temp_node_ptr, received_graph_)) {
             nodeIdx_idx_map.insert({node.id, i});
+
+            // ROS_INFO("New node added: ID = %ld, Position = (%.2f, %.2f, %.2f)", 
+            //          temp_node_ptr->id, 
+            //          temp_node_ptr->position.x, 
+            //          temp_node_ptr->position.y, 
+            //          temp_node_ptr->position.z);
         }
     }
+
     // add connections to nodes
     for (const auto& node_ptr : received_graph_) { 
         AssignConnectNodes(nodeIdx_idx_map, received_graph_, node_ptr->connect_idxs, node_ptr->connect_nodes);

@@ -161,7 +161,7 @@ void FARMaster::Loop() {
     contour_graph_.UpdateContourGraph(odom_node_ptr_, realworld_contour_);
     if (is_graph_init_) {
       if (!FARUtil::IsDebug) printf("\033[2K");
-      std::cout<<"    "<<"Local V-Graph Updated. Number of local vertices: "<<ContourGraph::contour_graph_.size()<<std::endl;
+      // std::cout<<"    "<<"Local V-Graph Updated. Number of local vertices: "<<ContourGraph::contour_graph_.size()<<std::endl;
     }
     /* Adjust heights with terrain */
     map_handler_.AdjustCTNodeHeight(ContourGraph::contour_graph_);
@@ -183,7 +183,7 @@ void FARMaster::Loop() {
     }
     if (is_graph_init_) {
       if (!FARUtil::IsDebug) printf("\033[2K");
-      std::cout<<"    "<< "Number of new vertices adding to global V-Graph: "<< new_nodes_.size()<<std::endl;
+      // std::cout<<"    "<< "Number of new vertices adding to global V-Graph: "<< new_nodes_.size()<<std::endl;
     }
     /* Graph Updating */
     graph_manager_.UpdateNavGraph(new_nodes_, is_stop_update_, clear_nodes_);
@@ -194,7 +194,7 @@ void FARMaster::Loop() {
     nav_graph_ = graph_manager_.GetNavGraph();
     if (is_graph_init_) {
       if (!FARUtil::IsDebug) printf("\033[2K");
-      std::cout<<"    "<<"Global V-Graph Updated. Number of global vertices: "<<nav_graph_.size()<<std::endl;
+      // std::cout<<"    "<<"Global V-Graph Updated. Number of global vertices: "<<nav_graph_.size()<<std::endl;
     }
     contour_graph_.ExtractGlobalContours();      // Global Polygon Update
     graph_planner_.UpdaetVGraph(nav_graph_);     // Graph Planner Update
@@ -240,10 +240,10 @@ void FARMaster::PlanningCallBack(const ros::TimerEvent& event) {
   if (goal_ptr == NULL) {
     /* Graph Traversablity Update */
     if (!FARUtil::IsDebug) printf("\033[2K");
-    std::cout<<"    "<<"Adding Goal to V-Graph "<<"Time: "<<0.f<<"ms"<<std::endl;
+    // std::cout<<"    "<<"Adding Goal to V-Graph "<<"Time: "<<0.f<<"ms"<<std::endl;
     graph_planner_.UpdateGraphTraverability(odom_node_ptr_, NULL);
     if (!FARUtil::IsDebug) printf("\033[2K");
-    std::cout<<"    "<<"Path Search "<<"Time: "<<0.f<<"ms"<<std::endl;
+    // std::cout<<"    "<<"Path Search "<<"Time: "<<0.f<<"ms"<<std::endl;
   } else { 
     // Update goal postion with nearby terrain cloud
     const Point3D ori_p = graph_planner_.GetOriginNodePos(true);
@@ -432,7 +432,7 @@ void FARMaster::LoadROSParams() {
   nh.param<float>(master_prefix + "vehicle_height",        master_params_.vehicle_height, 0.75);
   nh.param<float>(master_prefix + "sensor_range",          master_params_.sensor_range, 50.0);
   nh.param<float>(master_prefix + "terrain_range",         master_params_.terrain_range, 15.0);
-  nh.param<float>(master_prefix + "local_planner_range",   master_params_.local_planner_range, 5.0);
+  nh.param<float>(master_prefix + "local_planner_range",   master_params_.local_planner_range, 2.0); // 5.0
   nh.param<float>(master_prefix + "visualize_ratio",       master_params_.viz_ratio, 1.0);
   nh.param<bool>(master_prefix  + "is_viewpoint_extend",   master_params_.is_viewpoint_extend, true);
   nh.param<bool>(master_prefix  + "is_multi_layer",        master_params_.is_multi_layer, false);

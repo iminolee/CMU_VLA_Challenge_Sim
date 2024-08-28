@@ -87,7 +87,6 @@ private:
     ros::Subscriber graph_sub_;
     ros::Subscriber save_graph_sub_, read_graph_sub_;
     ros::Publisher  graph_pub_, graph_viz_pub_;
-
     ros::ServiceServer request_graph_service_;
     GraphDecoderParams gd_params_;
     NodePtrStack received_graph_;
@@ -164,7 +163,6 @@ private:
         }
         return false;
     }
-    
 };
 
 
