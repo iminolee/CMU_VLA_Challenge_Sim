@@ -81,3 +81,31 @@ rosrun joy joy_node _dev:=/dev/input/js1
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="figures/ps3_controller.jpg" alt="PS3 Controller" width="45%"/>
 </p>
+
+## 2. Unity Scenes Setting Up
+### 2.1 Installations
+
+A total of 18 Unity scenes are used for the challenge. 15 scenes are provided for model development while 3 are held out for testing. The majority of these scenes are single rooms while a few are multi-room buildings.
+A set of the training environment models from [here](https://drive.google.com/drive/folders/1bmxdT6Oxzt0_0tohye2br7gqTnkMaq20?usp=share_link). For all of the 15 training scenes, we also provide a processed point cloud of the scene, object and region information including color and size attributes, and referential language statements. (For more details about [Object Referential Dataset](https://github.com/HaochenZ11/VLA-3D))
+
+```bash
+sudo apt update
+sudo apt install libusb-dev python-yaml python-is-python3
+```
+
+In a terminal, go inside this folder and compile (this may take a few minutes):
+```bash
+catkin_make
+```
+
+Download any of [CMU-VLA-Challenge Unity environment models](https://drive.google.com/drive/folders/1bmxdT6Oxzt0_0tohye2br7gqTnkMaq20?usp=share_link), unzip the folder, and copy the files inside to the `system/unity/src/vehicle_simulator/mesh/unity` folder.
+
+### 2.2 System Launch
+To launch just the simulator system by itself, go inside this folder and run:
+```bash
+./system_bring_up.sh
+```
+
+<p align="center">
+  <img src="figures/rviz_unity.png" alt="scene_top_view" width="90%"/>
+</p>
