@@ -3,6 +3,11 @@ system/matterport/src/vehicle_simulator/mesh/matterport
 system/matterport/src/far_planner/data
 system/matterport/build/
 system/matterport/devel/
+system/unity/build/
+system/unity/devel/
+system/unity/src/vehicle_simulator/mesh
+ai_module/
+data/
 **/.vscode/**
 **/__pycache__/**
 .catkin_workspace

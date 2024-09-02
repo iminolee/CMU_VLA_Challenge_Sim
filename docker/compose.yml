@@ -8,7 +8,7 @@ services:
     privileged: true
     stdin_open: true
     tty: true
-    working_dir: /home/$USER/CMU-VLA-Challenge
+    working_dir: /home/$USER/CMU_VLA_Challenge_base
     # Environment variables passed to the container
     environment:
       - "DISPLAY"

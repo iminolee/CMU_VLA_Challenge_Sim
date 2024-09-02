@@ -29,7 +29,7 @@ double broadcastHoriThre = 2.0;
 double broadcastVertThre = 1.0;
 double broadcastRate = 5.0;
 
-// define regin names
+// define region names
 map<string, string> RegionName = {
 {"a", "bathroom"},
 {"b", "bedroom"},
