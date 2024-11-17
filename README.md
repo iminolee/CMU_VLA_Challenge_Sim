@@ -10,9 +10,9 @@ sudo apt install libusb-dev
 ```
 
 ```bash
-https://github.com/iminolee/CMU_VLA_Challenge_base.git
+https://github.com/iminolee/CMU_VLA_Challenge_Envs.git
 
-cd CMU_VLA_Challenge_base/system/matterport
+cd CMU_VLA_Challenge_Envs/system/matterport
 catkin_make
 ```
 
@@ -32,7 +32,7 @@ Download Matterport3D scene dataset (ID:17DRP5sb8fy) as an example
 The prepared environment model files should look like the following:
 
 ```
-CMU_VLA_Challenge_base
+CMU_VLA_Challenge_Envs
 ├── system
 │   └── matterport/src/vehicle_simulator/mesh
 │       └── matterport
