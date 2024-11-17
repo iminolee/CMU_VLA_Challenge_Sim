@@ -23,7 +23,7 @@ conda install -c conda-forge -c robostack ros-noetic-desktop
 ```
 
 ### 1.2 Data Preparation
-* [Download Matterport3D scene dataset (ID:17DRP5sb8fy) as an example](https://drive.google.com/file/d/1JvNxM0vLYubGY-vMKvTh1sj0K7meybGE/view?usp=drive_link)
+Download Matterport3D scene dataset (ID:17DRP5sb8fy) as an example
 
 <p align="center">
   <img src="figures/17DRP5sb8fy.png" alt="scene_top_view" width="70%"/>
