@@ -1,4 +1,4 @@
-# CMU_VLA_Challenge_base
+# CMU_VLA_Challenge_Simulation_Environment
 The instructions provided in this folder are based on the [CMU-VLA-Challenge](https://github.com/HaochenZ11/CMU-VLA-Challenge).
 The underlying code is derived from the [Autonomous Exploration Development Environment](https://www.cmu-exploration.com).
 
