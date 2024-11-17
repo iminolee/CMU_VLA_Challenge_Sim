@@ -19,7 +19,6 @@ catkin_make
 ```bash
 conda create --name habitat --file habitat_spec_file.txt
 conda activate habitat
-conda install -c conda-forge -c robostack ros-noetic-desktop
 ```
 
 ### 1.2 Data Preparation
@@ -47,6 +46,7 @@ CMU_VLA_Challenge_Envs
 ### 1.3 System Launch
 In a terminal, go inside this folder and bring up the system:
 ```bash
+# pip install --upgrade numpy-quaternion
 ./system_bring_up.sh
 ```
 <p align="center">
